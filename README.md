@@ -1,7 +1,5 @@
 > This is a fork of https://github.com/jaredsburrows/android-gradle-java-app-template with Bazel as the build system, instead of Gradle.
 
-> This is a WIP: many features are not yet ported over.
-
 # Android Bazel Java App Template 
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
@@ -37,13 +35,10 @@
 # Getting Started:
 ## `Android Studio` or `Intellij` Support (Simple):
 - **Import/Open this project with Android Studio/Intellij**
-  - WIP
-
-- **Instrumentation Tests:**
-  - WIP
-
-- **Unit Tests:**
-  - WIP
+  1. Install the [Bazel plugin](https://ij.bazel.build/).
+  1. In the project selection dialog, click "Import Bazel Project".
+  1. For the project view, select "Create from scratch".
+  1. Click "Finish".
 
 ## Building and Running
 
