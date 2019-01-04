@@ -29,17 +29,6 @@
 | [Espresso](https://google.github.io/android-testing-support-library/) | Instrumentation Framework |
 | [Robolectric](https://github.com/robolectric/robolectric)             | Unit Testing Framework    |
 
-#### Reporting Plugins:
-| Name                                     | Description                                |
-|------------------------------------------|--------------------------------------------|
-| [JaCoCo](http://www.eclemma.org/jacoco/) | JaCoCo Test Coverage                       |
-| [Coveralls](https://coveralls.io/)       | Hosts test reports published from TravisCI |
-
-#### Continuous Integration:
-| Name                                                          | Description                                                 |
-|---------------------------------------------------------------|-------------------------------------------------------------|
-| [TravisCI](http://docs.travis-ci.com/user/languages/android/) | Build Server(Builds, Tests, Publishes reports to Coveralls) |
-
 #### Publishing to Google Play:
 | Name | Description |
 |------|-------------|
@@ -59,7 +48,7 @@
 ## Building and Running
 
 
-This project builds with [Bazel](https://bazel.build) and the Android Build [tools](http://tools.android.com/tech-docs/new-build-system).
+This project builds with [Bazel](https://bazel.build), Bazel's [Android rules](https://docs.bazel.build/versions/master/be/android.html), and the Android Build [tools](http://tools.android.com/tech-docs/new-build-system).
 
 
 **Build the APK:**
@@ -82,7 +71,6 @@ or:
 
 **Running the Unit Tests:**
 
-
 The [Junit](http://junit.org/junit4/) and [Robolectric](https://github.com/robolectric/robolectric) tests run on the JVM, no need for emulators or real devices.
 
     $ bazel test //src/test:all
@@ -98,14 +86,15 @@ The [Junit](http://junit.org/junit4/) and [Robolectric](https://github.com/robol
 
 **Running the Instrumentation Tests:**
 
-
 The [Espresso](https://developer.android.com/training/testing/ui-testing/espresso-testing.html) instrumentation tests run on the device.
 
-    $ WIP
+This is currently only supported on Linux.
+
+    $ bazel test //src/androidTest:main_activity_test
     
+Read the [Bazel docs here](https://docs.bazel.build/versions/master/android-instrumentation-test.html).
 
 ## Reports
-
 
 **Generate Lint Reports:**
 

@@ -4,6 +4,7 @@ android_binary(
     name = "template_app",
     custom_package = "burrows.apps.example.template",
     manifest = "AndroidManifest.xml",
+    visibility = ["//src/androidTest:__subpackages__"],
     deps = ["//src/main:template_app_lib"],
 )
 
@@ -13,7 +14,7 @@ android_library(
     custom_package = "burrows.apps.example.template",
     manifest = "java/AndroidManifest.xml",
     resource_files = glob(["res/**/*"]),
-    visibility = ["//src/test:__subpackages__"],
+    visibility = ["//src:__subpackages__"],
     deps = [":external_deps"],
 )
 

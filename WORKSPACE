@@ -19,11 +19,12 @@ load("//:versions.bzl", "versions")
 
 TEST_DEPS = [
     "org.robolectric:robolectric:" + versions["robolectric"],
-    "androidx.test.ext:junit:" + versions["androidx.test"]["ext"]["junit"],
     "org.assertj:assertj-core:" + versions["assertj"],
     "junit:junit:" + versions["junit"],
     "androidx.test:runner:" + versions["androidx.test"]["runner"],
     "androidx.test:rules:" + versions["androidx.test"]["rules"],
+    "androidx.test.ext:junit:" + versions["androidx.test"]["ext"]["junit"],
+    "androidx.test.espresso:espresso-core:" + versions["espresso"],
     "org.easymock:easymock:" + versions["easymock"],
     "org.powermock:powermock-core:" + versions["powermock"],
     "org.powermock:powermock-module-junit4:" + versions["powermock"],
@@ -44,3 +45,15 @@ maven_install(
         "https://maven.google.com",
     ],
 )
+
+ATS_COMMIT = "6ec000c66e1daabb9cd0abd29c265550df5c11b1"
+
+http_archive(
+    name = "android_test_support",
+    strip_prefix = "android-test-%s" % ATS_COMMIT,
+    urls = ["https://github.com/jin/android-test/archive/%s.tar.gz" % ATS_COMMIT],
+)
+
+load("@android_test_support//:repo.bzl", "android_test_repositories")
+
+android_test_repositories()
