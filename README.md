@@ -1,5 +1,3 @@
-> This is a fork of https://github.com/jaredsburrows/android-gradle-java-app-template with Bazel as the build system, instead of Gradle.
-
 # Android Bazel Java App Template 
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
@@ -15,22 +13,11 @@
 | [Android Studio](http://tools.android.com/recent) or                                     | Official IDE         |
 | [Intellij](https://www.jetbrains.com/idea/download/)                                     | Intellij IDE         |
 
-#### Android Libraries:
-| Name                                                                                                  | Description            |
-|-------------------------------------------------------------------------------------------------------|------------------------|
-| [Android Support-v4](http://developer.android.com/tools/support-library/features.html#v4)             | Support Library API 4+ |
-| [Android AppCompat-v7](http://developer.android.com/tools/support-library/features.html#v7-appcompat) | Support Library API 7+ |
-
 #### Testing Frameworks:
 | Name                                                                  | Description               |
 |-----------------------------------------------------------------------|---------------------------|
 | [Espresso](https://google.github.io/android-testing-support-library/) | Instrumentation Framework |
 | [Robolectric](https://github.com/robolectric/robolectric)             | Unit Testing Framework    |
-
-#### Publishing to Google Play:
-| Name | Description |
-|------|-------------|
-| WIP  | WIP         |
 
 # Getting Started:
 ## `Android Studio` or `Intellij` Support (Simple):
@@ -42,8 +29,9 @@
 
 ## Building and Running
 
-
-This project builds with [Bazel](https://bazel.build), Bazel's [Android rules](https://docs.bazel.build/versions/master/be/android.html), and the Android Build [tools](http://tools.android.com/tech-docs/new-build-system).
+This project builds with [Bazel](https://bazel.build), Bazel's [Android
+rules](https://docs.bazel.build/versions/master/be/android.html), and the
+Android Build [tools](http://tools.android.com/tech-docs/new-build-system).
 
 
 **Build the APK:**
@@ -66,7 +54,9 @@ or:
 
 **Running the Unit Tests:**
 
-The [Junit](http://junit.org/junit4/) and [Robolectric](https://github.com/robolectric/robolectric) tests run on the JVM, no need for emulators or real devices.
+The [Junit](http://junit.org/junit4/) and
+[Robolectric](https://github.com/robolectric/robolectric) tests run on the JVM,
+no need for emulators or real devices.
 
     $ bazel test //src/test:all
 
@@ -81,29 +71,13 @@ The [Junit](http://junit.org/junit4/) and [Robolectric](https://github.com/robol
 
 **Running the Instrumentation Tests:**
 
-The [Espresso](https://developer.android.com/training/testing/ui-testing/espresso-testing.html) instrumentation tests run on the device.
+The
+[Espresso](https://developer.android.com/training/testing/ui-testing/espresso-testing.html)
+instrumentation tests run on the device. There is no need to launch an emulator,
+Bazel will do it automatically as part of the instrumentation test.
 
 This is currently only supported on Linux.
 
     $ bazel test //src/androidTest:main_activity_test
     
 Read the [Bazel docs here](https://docs.bazel.build/versions/master/android-instrumentation-test.html).
-
-## Reports
-
-**Generate Lint Reports:**
-
-
-The [Lint](http://developer.android.com/tools/help/lint.html) plugin generates reports based off the source code.
-
-
-    $ WIP
-
-
-**Generate Jacoco Test Coverage:**
-
-
-The [Jacoco](http://www.eclemma.org/jacoco/) plugin generates coverage reports based off the unit tests.
-
-
-    $ WIP
